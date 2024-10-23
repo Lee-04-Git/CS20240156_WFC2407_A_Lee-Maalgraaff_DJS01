@@ -17,7 +17,10 @@ const spacecraftParams = {
 
 const { vel, acc, time, d, fuel, fbr } = spacecraftParams;
 
-const d2 = d + (vel*time) //calcultes new distance
+const velInMetersPerSecond = vel * (1000 / 3600);
+
+const newDistance = d + (velInMetersPerSecond * time) / 1000;
+
 const rf = fbr*time //calculates remaining fuel
 const vel2 = calcNewVel(acc, vel, time) //calculates new velocity based on acceleration
 
