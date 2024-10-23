@@ -18,6 +18,15 @@ body {
     align-items: center; /* Center vertically */
 }
 
+.card {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Soft shadow */
+    padding: 20px; /* Padding inside the card */
+    width: 300px; /* Fixed width for the card */
+    text-align: center; /* Center text */
+}
+
 /* Style the h1 element */
 h1 {
     font-weight: bold;
