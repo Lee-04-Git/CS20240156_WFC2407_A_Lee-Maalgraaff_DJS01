@@ -20,9 +20,9 @@ const { vel, acc, time, d, fuel, fbr } = spacecraftParams;
 const velInMetersPerSecond = vel * (1000 / 3600);
 
 const newDistance = d + (velInMetersPerSecond * time) / 1000;
+const remainingFuel = Math.max(0, fuel - (fbr * time)); //calculates remaining fuel
 
-const rf = fbr*time //calculates remaining fuel
-const vel2 = calcNewVel(acc, vel, time) //calculates new velocity based on acceleration
+const newVelocity = vel + (acc * time * 3600) / 1000; //calculates new velocity based on acceleration
 
 // Pick up an error with how the function below is called and make it robust to such errors
 calcNewVel = (vel, acc, time) => { 
