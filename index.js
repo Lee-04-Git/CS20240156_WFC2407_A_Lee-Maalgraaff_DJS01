@@ -25,13 +25,16 @@ const remainingFuel = Math.max(0, fuel - (fbr * time)); //calculates remaining f
 const newVelocity = vel + (acc * time * 3600) / 1000; //calculates new velocity based on acceleration
 
 // Pick up an error with how the function below is called and make it robust to such errors
-calcNewVel = (vel, acc, time) => { 
-  return vel + (acc*time)
-}
+const calcNewVel = (velocity, acceleration, time) => { 
+  if (typeof velocity !== 'number' || typeof acceleration !== 'number' || typeof time !== 'number') {
+    throw new Error('Parameters must be numbers');
+  }
+  return velocity + (acceleration * time);
+};
 
-console.log(`Corrected New Velocity: ${vel2} km/h`);
-console.log(`Corrected New Distance: ${d2} km`);
-console.log(`Corrected Remaining Fuel: ${rf} kg`);
+console.log(`Corrected New Velocity: ${newVelocity.toFixed(2)} km/h`);
+console.log(`Corrected New Distance:${newDistance.toFixed(2)} km`);
+console.log(`Corrected Remaining Fuel: ${remainingFuel.toFixed(2)} kg`);
 
 
 
