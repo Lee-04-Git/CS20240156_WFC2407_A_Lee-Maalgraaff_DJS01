@@ -32,6 +32,8 @@ const calcNewVel = (velocity, acceleration, time) => {
   return velocity + (acceleration * time);
 };
 
+const total = calcNewVel(newVelocity, acc, time);
+
 console.log(`Corrected New Velocity: ${newVelocity.toFixed(2)} km/h`);
 console.log(`Corrected New Distance:${newDistance.toFixed(2)} km`);
 console.log(`Corrected Remaining Fuel: ${remainingFuel.toFixed(2)} kg`);
